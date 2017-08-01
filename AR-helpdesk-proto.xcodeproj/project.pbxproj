@@ -1,0 +1,558 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1142D7C51F30E49F004CFC6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1142D7C41F30E49F004CFC6A /* AppDelegate.swift */; };
+		1142D7C71F30E49F004CFC6A /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 1142D7C61F30E49F004CFC6A /* art.scnassets */; };
+		1142D7C91F30E49F004CFC6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1142D7C81F30E49F004CFC6A /* ViewController.swift */; };
+		1142D7CC1F30E49F004CFC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1142D7CA1F30E49F004CFC6A /* Main.storyboard */; };
+		1142D7CE1F30E49F004CFC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1142D7CD1F30E49F004CFC6A /* Assets.xcassets */; };
+		1142D7D11F30E49F004CFC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1142D7CF1F30E49F004CFC6A /* LaunchScreen.storyboard */; };
+		1142D7DC1F30E49F004CFC6A /* AR_helpdesk_protoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1142D7DB1F30E49F004CFC6A /* AR_helpdesk_protoTests.swift */; };
+		1142D7E71F30E49F004CFC6A /* AR_helpdesk_protoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1142D7E61F30E49F004CFC6A /* AR_helpdesk_protoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1142D7D81F30E49F004CFC6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1142D7B91F30E49F004CFC6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1142D7C01F30E49F004CFC6A;
+			remoteInfo = "AR-helpdesk-proto";
+		};
+		1142D7E31F30E49F004CFC6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1142D7B91F30E49F004CFC6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1142D7C01F30E49F004CFC6A;
+			remoteInfo = "AR-helpdesk-proto";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1142D7C11F30E49F004CFC6A /* AR-helpdesk-proto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-helpdesk-proto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1142D7C41F30E49F004CFC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1142D7C61F30E49F004CFC6A /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		1142D7C81F30E49F004CFC6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1142D7CB1F30E49F004CFC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1142D7CD1F30E49F004CFC6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1142D7D01F30E49F004CFC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1142D7D21F30E49F004CFC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1142D7D71F30E49F004CFC6A /* AR-helpdesk-protoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AR-helpdesk-protoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1142D7DB1F30E49F004CFC6A /* AR_helpdesk_protoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_helpdesk_protoTests.swift; sourceTree = "<group>"; };
+		1142D7DD1F30E49F004CFC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1142D7E21F30E49F004CFC6A /* AR-helpdesk-protoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AR-helpdesk-protoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1142D7E61F30E49F004CFC6A /* AR_helpdesk_protoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_helpdesk_protoUITests.swift; sourceTree = "<group>"; };
+		1142D7E81F30E49F004CFC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1142D7BE1F30E49F004CFC6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1142D7D41F30E49F004CFC6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1142D7DF1F30E49F004CFC6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1142D7B81F30E49F004CFC6A = {
+			isa = PBXGroup;
+			children = (
+				1142D7C31F30E49F004CFC6A /* AR-helpdesk-proto */,
+				1142D7DA1F30E49F004CFC6A /* AR-helpdesk-protoTests */,
+				1142D7E51F30E49F004CFC6A /* AR-helpdesk-protoUITests */,
+				1142D7C21F30E49F004CFC6A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1142D7C21F30E49F004CFC6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1142D7C11F30E49F004CFC6A /* AR-helpdesk-proto.app */,
+				1142D7D71F30E49F004CFC6A /* AR-helpdesk-protoTests.xctest */,
+				1142D7E21F30E49F004CFC6A /* AR-helpdesk-protoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1142D7C31F30E49F004CFC6A /* AR-helpdesk-proto */ = {
+			isa = PBXGroup;
+			children = (
+				1142D7C41F30E49F004CFC6A /* AppDelegate.swift */,
+				1142D7C61F30E49F004CFC6A /* art.scnassets */,
+				1142D7C81F30E49F004CFC6A /* ViewController.swift */,
+				1142D7CA1F30E49F004CFC6A /* Main.storyboard */,
+				1142D7CD1F30E49F004CFC6A /* Assets.xcassets */,
+				1142D7CF1F30E49F004CFC6A /* LaunchScreen.storyboard */,
+				1142D7D21F30E49F004CFC6A /* Info.plist */,
+			);
+			path = "AR-helpdesk-proto";
+			sourceTree = "<group>";
+		};
+		1142D7DA1F30E49F004CFC6A /* AR-helpdesk-protoTests */ = {
+			isa = PBXGroup;
+			children = (
+				1142D7DB1F30E49F004CFC6A /* AR_helpdesk_protoTests.swift */,
+				1142D7DD1F30E49F004CFC6A /* Info.plist */,
+			);
+			path = "AR-helpdesk-protoTests";
+			sourceTree = "<group>";
+		};
+		1142D7E51F30E49F004CFC6A /* AR-helpdesk-protoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1142D7E61F30E49F004CFC6A /* AR_helpdesk_protoUITests.swift */,
+				1142D7E81F30E49F004CFC6A /* Info.plist */,
+			);
+			path = "AR-helpdesk-protoUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1142D7C01F30E49F004CFC6A /* AR-helpdesk-proto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1142D7EB1F30E49F004CFC6A /* Build configuration list for PBXNativeTarget "AR-helpdesk-proto" */;
+			buildPhases = (
+				1142D7BD1F30E49F004CFC6A /* Sources */,
+				1142D7BE1F30E49F004CFC6A /* Frameworks */,
+				1142D7BF1F30E49F004CFC6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AR-helpdesk-proto";
+			productName = "AR-helpdesk-proto";
+			productReference = 1142D7C11F30E49F004CFC6A /* AR-helpdesk-proto.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1142D7D61F30E49F004CFC6A /* AR-helpdesk-protoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1142D7EE1F30E49F004CFC6A /* Build configuration list for PBXNativeTarget "AR-helpdesk-protoTests" */;
+			buildPhases = (
+				1142D7D31F30E49F004CFC6A /* Sources */,
+				1142D7D41F30E49F004CFC6A /* Frameworks */,
+				1142D7D51F30E49F004CFC6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1142D7D91F30E49F004CFC6A /* PBXTargetDependency */,
+			);
+			name = "AR-helpdesk-protoTests";
+			productName = "AR-helpdesk-protoTests";
+			productReference = 1142D7D71F30E49F004CFC6A /* AR-helpdesk-protoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1142D7E11F30E49F004CFC6A /* AR-helpdesk-protoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1142D7F11F30E49F004CFC6A /* Build configuration list for PBXNativeTarget "AR-helpdesk-protoUITests" */;
+			buildPhases = (
+				1142D7DE1F30E49F004CFC6A /* Sources */,
+				1142D7DF1F30E49F004CFC6A /* Frameworks */,
+				1142D7E01F30E49F004CFC6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1142D7E41F30E49F004CFC6A /* PBXTargetDependency */,
+			);
+			name = "AR-helpdesk-protoUITests";
+			productName = "AR-helpdesk-protoUITests";
+			productReference = 1142D7E21F30E49F004CFC6A /* AR-helpdesk-protoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1142D7B91F30E49F004CFC6A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = IsaacAndersen;
+				TargetAttributes = {
+					1142D7C01F30E49F004CFC6A = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					1142D7D61F30E49F004CFC6A = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = 1142D7C01F30E49F004CFC6A;
+					};
+					1142D7E11F30E49F004CFC6A = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = 1142D7C01F30E49F004CFC6A;
+					};
+				};
+			};
+			buildConfigurationList = 1142D7BC1F30E49F004CFC6A /* Build configuration list for PBXProject "AR-helpdesk-proto" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1142D7B81F30E49F004CFC6A;
+			productRefGroup = 1142D7C21F30E49F004CFC6A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1142D7C01F30E49F004CFC6A /* AR-helpdesk-proto */,
+				1142D7D61F30E49F004CFC6A /* AR-helpdesk-protoTests */,
+				1142D7E11F30E49F004CFC6A /* AR-helpdesk-protoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1142D7BF1F30E49F004CFC6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1142D7C71F30E49F004CFC6A /* art.scnassets in Resources */,
+				1142D7D11F30E49F004CFC6A /* LaunchScreen.storyboard in Resources */,
+				1142D7CE1F30E49F004CFC6A /* Assets.xcassets in Resources */,
+				1142D7CC1F30E49F004CFC6A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1142D7D51F30E49F004CFC6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1142D7E01F30E49F004CFC6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1142D7BD1F30E49F004CFC6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1142D7C91F30E49F004CFC6A /* ViewController.swift in Sources */,
+				1142D7C51F30E49F004CFC6A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1142D7D31F30E49F004CFC6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1142D7DC1F30E49F004CFC6A /* AR_helpdesk_protoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1142D7DE1F30E49F004CFC6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1142D7E71F30E49F004CFC6A /* AR_helpdesk_protoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1142D7D91F30E49F004CFC6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1142D7C01F30E49F004CFC6A /* AR-helpdesk-proto */;
+			targetProxy = 1142D7D81F30E49F004CFC6A /* PBXContainerItemProxy */;
+		};
+		1142D7E41F30E49F004CFC6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1142D7C01F30E49F004CFC6A /* AR-helpdesk-proto */;
+			targetProxy = 1142D7E31F30E49F004CFC6A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1142D7CA1F30E49F004CFC6A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1142D7CB1F30E49F004CFC6A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1142D7CF1F30E49F004CFC6A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1142D7D01F30E49F004CFC6A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1142D7E91F30E49F004CFC6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1142D7EA1F30E49F004CFC6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1142D7EC1F30E49F004CFC6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B79NYE3Q5Z;
+				INFOPLIST_FILE = "AR-helpdesk-proto/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.isaacandersen.AR-helpdesk-proto";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1142D7ED1F30E49F004CFC6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B79NYE3Q5Z;
+				INFOPLIST_FILE = "AR-helpdesk-proto/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.isaacandersen.AR-helpdesk-proto";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1142D7EF1F30E49F004CFC6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B79NYE3Q5Z;
+				INFOPLIST_FILE = "AR-helpdesk-protoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.isaacandersen.AR-helpdesk-protoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AR-helpdesk-proto.app/AR-helpdesk-proto";
+			};
+			name = Debug;
+		};
+		1142D7F01F30E49F004CFC6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B79NYE3Q5Z;
+				INFOPLIST_FILE = "AR-helpdesk-protoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.isaacandersen.AR-helpdesk-protoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AR-helpdesk-proto.app/AR-helpdesk-proto";
+			};
+			name = Release;
+		};
+		1142D7F21F30E49F004CFC6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = B79NYE3Q5Z;
+				INFOPLIST_FILE = "AR-helpdesk-protoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.isaacandersen.AR-helpdesk-protoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "AR-helpdesk-proto";
+			};
+			name = Debug;
+		};
+		1142D7F31F30E49F004CFC6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = B79NYE3Q5Z;
+				INFOPLIST_FILE = "AR-helpdesk-protoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.isaacandersen.AR-helpdesk-protoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "AR-helpdesk-proto";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1142D7BC1F30E49F004CFC6A /* Build configuration list for PBXProject "AR-helpdesk-proto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1142D7E91F30E49F004CFC6A /* Debug */,
+				1142D7EA1F30E49F004CFC6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1142D7EB1F30E49F004CFC6A /* Build configuration list for PBXNativeTarget "AR-helpdesk-proto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1142D7EC1F30E49F004CFC6A /* Debug */,
+				1142D7ED1F30E49F004CFC6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1142D7EE1F30E49F004CFC6A /* Build configuration list for PBXNativeTarget "AR-helpdesk-protoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1142D7EF1F30E49F004CFC6A /* Debug */,
+				1142D7F01F30E49F004CFC6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1142D7F11F30E49F004CFC6A /* Build configuration list for PBXNativeTarget "AR-helpdesk-protoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1142D7F21F30E49F004CFC6A /* Debug */,
+				1142D7F31F30E49F004CFC6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1142D7B91F30E49F004CFC6A /* Project object */;
+}

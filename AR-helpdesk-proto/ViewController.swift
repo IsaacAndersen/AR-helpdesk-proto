@@ -297,7 +297,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         case .OverlayScale:
             qrBox.setAligning(state: false)
         case .OverlayActive:
-            qrBox.addItem()
+            qrBox.togglePort(port: Port.HDMI)
             qrBox.setAligning(state: false)
         }
     }

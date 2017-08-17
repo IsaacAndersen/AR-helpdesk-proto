@@ -15,6 +15,9 @@
 		1142D7D11F30E49F004CFC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1142D7CF1F30E49F004CFC6A /* LaunchScreen.storyboard */; };
 		1142D7DC1F30E49F004CFC6A /* AR_helpdesk_protoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1142D7DB1F30E49F004CFC6A /* AR_helpdesk_protoTests.swift */; };
 		1142D7E71F30E49F004CFC6A /* AR_helpdesk_protoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1142D7E61F30E49F004CFC6A /* AR_helpdesk_protoUITests.swift */; };
+		11CAA7091F38D23800A8BED0 /* ScreenOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CAA7081F38D23800A8BED0 /* ScreenOverlay.swift */; };
+		11DC080C1F4373AC000CD1CA /* ScenarioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC080B1F4373AC000CD1CA /* ScenarioTableViewCell.swift */; };
+		11DC080F1F439B53000CD1CA /* ScenarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC080E1F439B53000CD1CA /* ScenarioTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,10 @@
 		1142D7E21F30E49F004CFC6A /* AR-helpdesk-protoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AR-helpdesk-protoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1142D7E61F30E49F004CFC6A /* AR_helpdesk_protoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_helpdesk_protoUITests.swift; sourceTree = "<group>"; };
 		1142D7E81F30E49F004CFC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11CAA7081F38D23800A8BED0 /* ScreenOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenOverlay.swift; sourceTree = "<group>"; };
+		11DC080B1F4373AC000CD1CA /* ScenarioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioTableViewCell.swift; sourceTree = "<group>"; };
+		11DC080D1F4374CA000CD1CA /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		11DC080E1F439B53000CD1CA /* ScenarioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +111,12 @@
 				1142D7C81F30E49F004CFC6A /* ViewController.swift */,
 				1142D7CA1F30E49F004CFC6A /* Main.storyboard */,
 				1142D7CD1F30E49F004CFC6A /* Assets.xcassets */,
+				11DC080D1F4374CA000CD1CA /* gear.png */,
 				1142D7CF1F30E49F004CFC6A /* LaunchScreen.storyboard */,
 				1142D7D21F30E49F004CFC6A /* Info.plist */,
+				11CAA7081F38D23800A8BED0 /* ScreenOverlay.swift */,
+				11DC080B1F4373AC000CD1CA /* ScenarioTableViewCell.swift */,
+				11DC080E1F439B53000CD1CA /* ScenarioTableViewController.swift */,
 			);
 			path = "AR-helpdesk-proto";
 			sourceTree = "<group>";
@@ -260,8 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11DC080F1F439B53000CD1CA /* ScenarioTableViewController.swift in Sources */,
 				1142D7C91F30E49F004CFC6A /* ViewController.swift in Sources */,
+				11DC080C1F4373AC000CD1CA /* ScenarioTableViewCell.swift in Sources */,
 				1142D7C51F30E49F004CFC6A /* AppDelegate.swift in Sources */,
+				11CAA7091F38D23800A8BED0 /* ScreenOverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

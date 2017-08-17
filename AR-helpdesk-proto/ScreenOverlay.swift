@@ -125,7 +125,7 @@ class ScreenOverlay: SCNNode {
             let itemNode = (itemScene?.rootNode.childNode(withName: itemName, recursively: true))!
             itemNode.position = SCNVector3Zero
             itemNode.scale = SCNVector3Make(50, 50, 50)
-            screenNode.addChildNode(itemNode)
+            boxNode.addChildNode(itemNode)
             portDict[itemName] = itemNode
             return
         }

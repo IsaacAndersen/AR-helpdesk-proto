@@ -13,7 +13,7 @@ class ScenarioTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var emojiLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

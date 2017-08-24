@@ -15,6 +15,9 @@ enum Port: Int{
     case Ethernet
     case Coaxial
     case USB
+    case Button
+    case Card
+    case PowerCable
 }
 
 class ScreenOverlay: SCNNode {
@@ -22,6 +25,10 @@ class ScreenOverlay: SCNNode {
     var boxNode: SCNNode = SCNNode()
     
     var portDict: Dictionary = [String : SCNNode]()
+    
+    var height: Float = 7.0
+    var width: Float = 9.5
+    
     
     override init() {
         super.init();
@@ -33,9 +40,6 @@ class ScreenOverlay: SCNNode {
         boxNode.pivot = SCNMatrix4MakeTranslation(0,0,0)
         boxNode.rotation = SCNVector4Make(0, 0, 0,0);
         
-        let width: Float = 9.5
-        let height: Float = 7.0
-        
         
         let screenPlane = SCNPlane(width: CGFloat(width), height: CGFloat(height))
         screenPlane.firstMaterial?.diffuse.contents = UIColor.yellow.cgColor.copy(alpha: 0.25)
@@ -44,7 +48,8 @@ class ScreenOverlay: SCNNode {
         // Todo: Scale based on square size.
         screenNode.scale = SCNVector3Make(0.725, 0.725, 0.725)
         screenNode.pivot = SCNMatrix4MakeTranslation(-width/2, -height/2, 0)
-        screenNode.eulerAngles = SCNVector3Make(-Float.pi/4, 0, 0)
+        //screenNode.eulerAngles = SCNVector3Make(-Float.pi/4, 0, 0)
+        self.eulerAngles = SCNVector3Make(-Float.pi/4, 0, 0)
         boxNode.addChildNode(screenNode)
         self.addChildNode(boxNode)
         
@@ -56,6 +61,7 @@ class ScreenOverlay: SCNNode {
     
     func setAligning(state: Bool) {
         if (state) {
+            
             self.constraints = [SCNBillboardConstraint()]
         } else {
             self.constraints = [];
@@ -87,7 +93,7 @@ class ScreenOverlay: SCNNode {
         hdmiNode.position = SCNVector3Make(xRand, yRand, 0)
         coaxNode.position = SCNVector3Make(xRand, yRand, 0)
         
-        boxNode.addChildNode(hdmiNode)
+        //boxNode.addChildNode(hdmiNode)
         //screenNode.addChildNode(boxNode);
         print("Count: \(screenNode.childNodes.count)")
     }
@@ -95,26 +101,39 @@ class ScreenOverlay: SCNNode {
     
     //MARK: Ports
     
-    func togglePort(port: Port) {
+    func togglePort(port: Port, set: Bool) {
         var scnName = ""
         var itemName = ""
         var pos = SCNVector3Zero
         
+        // Fix alignment, animate, add a "press" button.
+        
         switch (port) {
+        case .PowerCable:
+            scnName = "art.scnassets/coaxialcable.dae"
+            itemName = "power"
+            pos = SCNVector3Make(0.2,1.0,0)
+            
+            break
         case .HDMI:
             scnName = "art.scnassets/hdmi.dae"
             itemName = "hdmi"
-            pos = SCNVector3Make(0.5*9.5*0.725, 0.5*9.5*0.725, 0)
+            pos = SCNVector3Make(0.5, 1.0, 0)
             break
         case .Coaxial:
             scnName = "art.scnassets/coaxialcable.dae"
             itemName = "coaxial"
-            pos = SCNVector3Make(0.5, 0.5, 0.5)
+            pos = SCNVector3Make(0.85,1.0,0)
             break
         case .USB:
-            scnName = "art.scnassets/usb2.scn"
-            itemName = "usb01"
-            pos = SCNVector3Make(0.5, 0.5, 0.5)
+            scnName = "art.scnassets/smart-card.dae"
+            itemName = "Box1"
+            pos = SCNVector3Make(0.77, -0.5, 0)
+            break
+        case .Button:
+            scnName = "art.scnassets/arrow1.dae"
+            itemName = "arrow"
+            pos = SCNVector3Make(0.125, 0.0, 0.5)
             break
         default:
             break
@@ -123,15 +142,37 @@ class ScreenOverlay: SCNNode {
         guard let currentNode = portDict[itemName] else {
             let itemScene = SCNScene(named: scnName)
             let itemNode = (itemScene?.rootNode.childNode(withName: itemName, recursively: true))!
-            itemNode.position = SCNVector3Zero
-            itemNode.scale = SCNVector3Make(50, 50, 50)
+            let xCoord = pos.x*width*0.725;
+            let yCoord = pos.y*height*0.725;
+            let posUpdated = SCNVector3Make(xCoord, yCoord, pos.z)
+            itemNode.position = posUpdated
+            itemNode.isHidden = set
+            
+            if (port == Port.Button) {
+                let moveUp = SCNAction.moveBy(x: 0, y: 0, z: 1, duration: 1)
+                moveUp.timingMode = .easeInEaseOut;
+                let moveDown = SCNAction.moveBy(x: 0, y: 0, z: -1, duration: 1)
+                moveDown.timingMode = .easeInEaseOut;
+                let moveSequence = SCNAction.sequence([moveUp,moveDown])
+                let moveLoop = SCNAction.repeatForever(moveSequence!)
+                itemNode.runAction(moveLoop!)
+            } else {
+                let moveUp = SCNAction.moveBy(x: 0, y: 1, z: 0, duration: 1)
+                moveUp.timingMode = .easeInEaseOut;
+                let moveDown = SCNAction.moveBy(x: 0, y: -1, z: 0, duration: 1)
+                moveDown.timingMode = .easeInEaseOut;
+                let moveSequence = SCNAction.sequence([moveUp,moveDown])
+                let moveLoop = SCNAction.repeatForever(moveSequence!)
+                itemNode.runAction(moveLoop!)
+            }
+            
             boxNode.addChildNode(itemNode)
             portDict[itemName] = itemNode
+            
             return
         }
         
-        currentNode.removeFromParentNode()
-        portDict[itemName] = nil
+        currentNode.isHidden = set
     }
     
     

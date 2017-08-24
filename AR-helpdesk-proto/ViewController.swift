@@ -13,22 +13,63 @@ import ARKit
 import Vision
 
 enum ProgramState: String {
-    case OverlayPositioning = "Positioning"
-    case OverlayAlign = "Aligning"
-    case OverlayScale = "Scaling"
-    case OverlayActive = "Active"
+    case OverlayPositioning = "Please find the QR code located on top of the DVR"
+    case OverlayAlign = "Align the plane with the surface of the DVR."
+    case OverlayActive = "Perfect, let's get assembling!"
+    case Power = "Please plug the AC power cable to the back of the box."
+    case HDMI = "Please plug in the HDMI cable linking the box to the TV."
+    case Coax = "Plug in the coaxial cable to get signal."
+    case USB = "Insert the access card to the slot behind the panel on the front of the box."
+    case Ready = "Now we're ready to power on the box!"
     
-    mutating func next() {
+    
+    // Add more states
+    /*
+Plug in POWER
+Plug in HDMI
+Plug in Coaxial
+     
+     */
+    
+    mutating func forward() {
         switch self {
         case .OverlayPositioning:
             self = .OverlayAlign
         case .OverlayAlign:
-            self = .OverlayScale
-        case .OverlayScale:
             self = .OverlayActive
         case .OverlayActive:
+            self = .Power
+        case .Power:
+            self = .HDMI
+        case .HDMI:
+            self = .Coax
+        case .Coax:
+            self = .USB
+        case .USB:
+            self = .Ready
+        case .Ready:
             self = .OverlayPositioning
+        default:
+            break
         }
+    }
+    
+    mutating func back() {
+        for _ in 1...self.length()-1 {
+            self.forward()
+        }
+    }
+    
+    func first() -> ProgramState {
+        return ProgramState.OverlayPositioning
+    }
+    
+    func last() -> ProgramState {
+        return ProgramState.Ready
+    }
+    
+    func length() -> Int {
+        return 8
     }
     
     func description() -> String {
@@ -37,11 +78,15 @@ enum ProgramState: String {
 }
 
 class ViewController: UIViewController, ARSCNViewDelegate {
-
+    
+    //MARK: Properties
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var debugTextView: UITextView!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var forwardButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var progressBar: UIProgressView!
+    
     
     var visionRequests = [VNRequest]()
     let dispatchQueueML = DispatchQueue(label: "com.hw.dispatchqueueml") // A Serial Queue
@@ -51,6 +96,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var reposition: BooleanLiteralType = true;
     
     var state: ProgramState = ProgramState.OverlayPositioning
+    var stateIndex: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,16 +106,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
-        button.addTarget(self, action: #selector(ViewController.buttonPress), for: .touchUpInside)
+        forwardButton.addTarget(self, action: #selector(ViewController.forwardButtonPress), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(ViewController.backButtonPress), for: .touchUpInside)
         
-        debugTextView.text = "Searching for QR Marker"
-        
-        // Let's identify rectangles
-//        let rectangleRequest = VNDetectRectanglesRequest(completionHandler: rectangleCompleteHandler)
-//        rectangleRequest.maximumObservations = 1
-//        rectangleRequest.minimumSize = 0.35
-//        rectangleRequest.minimumAspectRatio = 1.33
-//        rectangleRequest.maximumAspectRatio = 1.85
+        debugTextView.text = ""
         
         let qrRequest = VNDetectBarcodesRequest(completionHandler: barcodeCompleteHandler)
         qrRequest.symbologies = [VNBarcodeSymbology.QR]
@@ -79,6 +119,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         qrBox = ScreenOverlay();
         sceneView.scene.rootNode.addChildNode(qrBox)
+        
+        handleState()
         
         // Start CoreML
         loopCoreMLUpdate()
@@ -182,14 +224,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         guard observations.first != nil else {
             DispatchQueue.main.async {
-                self.setText(string: "No qr detected")
+                
             }
             return
         }
         
         DispatchQueue.main.async {
             // Print Classifications
-            self.setText(string: "QR identified")
             self.addQRMarker(observations)
         }
     }
@@ -294,24 +335,70 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             } else {
                 qrBox.setAligning(state: true)
             }
-        case .OverlayScale:
-            qrBox.setAligning(state: false)
-        case .OverlayActive:
-            qrBox.togglePort(port: Port.HDMI)
-            qrBox.setAligning(state: false)
+        default:
+            break
         }
     }
     
     func setText(string: String) {
-        self.debugTextView.text =  "\(string)\nstate: \(state.description())\n"
+        self.debugTextView.text = "\(state.description())\n"
     }
     
-    @objc func buttonPress() {
-        self.state.next()
+    @objc func backButtonPress() {
+        if (self.state != self.state.first()) {
+            self.state.back();
+            stateIndex -= 1
+        }
+        handleState()
+        
+    }
+    
+    @objc func forwardButtonPress() {
+        if (self.state != self.state.last()) {
+            self.state.forward();
+            stateIndex += 1
+        }
+        handleState()
+    }
+    
+    func handleState() {
+        setText(string: "")
+        self.progressBar.setProgress(Float(stateIndex)/Float(state.length()), animated: true)
         if (state == .OverlayAlign) {
             qrBox.setAligning(state: true)
         } else {
             qrBox.setAligning(state: false)
+        }
+        
+        switch (state) {
+        case .OverlayPositioning:
+            break
+        case .OverlayAlign:
+            break
+        case .OverlayActive:
+            qrBox.togglePort(port: Port.PowerCable, set: true)
+        case .Power:
+            qrBox.togglePort(port: Port.HDMI, set: true)
+            qrBox.togglePort(port: Port.PowerCable, set: false)
+        case .HDMI:
+            qrBox.togglePort(port: Port.HDMI, set: false)
+            qrBox.togglePort(port: Port.Coaxial, set: true)
+            qrBox.togglePort(port: Port.PowerCable, set: true)
+            break;
+        case .Coax:
+            qrBox.togglePort(port: Port.HDMI, set: true)
+            qrBox.togglePort(port: Port.Coaxial, set: false)
+            qrBox.togglePort(port: Port.USB, set: true)
+            break
+        case .USB:
+            qrBox.togglePort(port: Port.Coaxial, set: true)
+            qrBox.togglePort(port: Port.USB, set: false)
+            qrBox.togglePort(port: Port.Button, set: true)
+            break
+        case .Ready:
+            qrBox.togglePort(port: Port.USB, set: true)
+            qrBox.togglePort(port: Port.Button, set: false)
+            break
         }
     }
 }
